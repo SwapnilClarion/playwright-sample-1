@@ -1,4 +1,4 @@
-import type {Page,BrowserContext} from 'playwright';
+import type {Page} from 'playwright';
 export default class NavigationPage {
    private page:Page;
    constructor(page){
