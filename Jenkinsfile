@@ -1,11 +1,11 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Test') {
-            steps {
-                echo "Test Run"
-            }
-        }
-    }
+   agent { docker { image 'mcr.microsoft.com/playwright:focal' } }
+   stages {
+      stage('e2e-tests') {
+         steps {
+            sh 'npm install'
+            sh 'npm run test'
+         }
+      }
+   }
 }
